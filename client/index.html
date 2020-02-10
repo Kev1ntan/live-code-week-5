@@ -13,7 +13,7 @@
     />
   </head>
 
-  <body>
+  <body onload="load()">
     <div class="container" id="app">
       <!-- Logout button and notification for success / error event -->
       <div class="row my-3">
@@ -25,9 +25,9 @@
       </div>
 
       <!-- This is Login Form  -->
-      <div>
+      <div id="loginPage">
         <h1>Login</h1>
-        <form class="my-4">
+        <form class="my-4" id="loginForm">
           <div class="form-group">
             <label for="email">Email</label>
             <input
@@ -48,18 +48,18 @@
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary">
-            Submit
+          <button type="submit" id="submitLoginForm" class="btn btn-primary">
+            Login
           </button>
-          <button type="submit" class="btn btn-info">
+          <button type="submit" id="registerBtn" class="btn btn-info">
             Register
           </button>
         </form>
       </div>
 
-      <div>
+      <div id="registerPage" style="display: none;">
         <h1>Register</h1>
-        <form class="my-4">
+        <form class="my-4" id="registerForm">
           <div class="form-group">
             <label for="name">Name</label>
             <input
@@ -90,37 +90,27 @@
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <div id="successR" style="display: none; color: red;"> berhasil mendaftar </div>
+          <button type="submit" id="submitRegisterButton" class="btn btn-primary">
             Submit
           </button>
           <button type="submit" class="btn btn-warning">
             Random User
           </button>
-          <button type="submit" class="btn btn-info">
+          <button type="submit" id="loginBtn" class="btn btn-info">
             Login
           </button>
         </form>
-      <ist -->
-      <div>
-        <h1>Comic Collection</h1>
-        <div class="row my-4">
+      </div>
+      <div id="homePage" style="display: none;">
+        <div class="row my-4" id="comicList">
+          <h1>Comic Collection</h1>
           <!-- Each of comic will have one of this card -->
-          <div class="col-4 mb-4">
-            <div class="card text-center">
-              <img
-                src="https://www.idwpublishing.com/wp-content/uploads/2018/10/aHR0cDovL3d3dy5uZXdzYXJhbWEuY29tL2ltYWdlcy9pLzAwMC8yNDAvNzQ0L29yaWdpbmFsL1NwaWRlcm1hbjAxX2N2ckEuanBn.jpeg"
-                class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">The Amazing Spiderman - new Avengers</h5>
-                <p class="card-text">Author: J Michael S</p>
-                <button class="btn btn-primary">Edit</button>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
       <!-- This is form page to update a comic -->
-      <div>
+      <div id="updateForm">
         <h1>Update Comic</h1>
         <form class="my-4">
           <div class="form-group">
@@ -129,17 +119,21 @@
           </div>
           <div class="form-group">
             <label for="author">Author</label>
-            <input type="text" class="form-control" name="author" />
+            <input id="author" type="text" class="form-control" name="author" />
           </div>
           <div class="form-group">
             <label for="imageUrl">Comic Image URL</label>
-            <input type="text" class="form-control" name="imageUrl" />
+            <input id="imageUrl" type="text" class="form-control" name="imageUrl" />
           </div>
           <button id="btn-update" type="submit" class="btn btn-primary">
             Submit
           </button>
         </form>
-      </di>
+      </div>
+    </div>
     </div>
   </body>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="script.js"></script>
 </html>
